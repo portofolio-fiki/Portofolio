@@ -1,0 +1,147 @@
+---
+openapi: 3.0.3
+info:
+  title: Sentiment Tweet Using Model Machine Learning 
+  version: 1.3.0
+  description: This API aim to predict review sentiment tweet using both Neural Network and LSTM as model machine learning
+  contact:
+    name: Fajar R , Fiki A , Regina A
+    email: 
+    url: 
+  license:
+    name: APACHE 2.0
+    url: htpps://www.apache.org/licenses/LICENSE-2.0
+servers:
+- description: Project Binar
+  url: "/"
+externalDocs:
+  description: 
+tags:
+- name: Dashboard
+  description: sentiment
+# - name: Text 
+#   description: Input text 
+paths:
+  "/":
+    get:
+      tags:
+      - Try This!!!
+      summary: 
+      description: Welcome!
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Misunderstood
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  "/textNN":
+    post:
+      tags:
+      - Text sentiments Neural Network
+      summary: input text
+      description: Post a text file 
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Misunderstood
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  "/textLSTM":
+    post:
+      tags:
+      - Text sentiments LSTM
+      summary: input text
+      description: Post a text file 
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Misunderstood
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  "/fileNN":
+    post:
+      tags:
+      - File Sentimen Neural Network
+      summary: input csv file
+      description: Post a csv file 
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: base64
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Misunderstood
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error    
+  "/fileLSTM":
+    post:
+      tags:
+      - File Sentiment LSTM
+      summary: input csv file 
+      description: Post a csv file 
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: base64
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Misunderstood
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
